@@ -22,11 +22,11 @@ const server_mode = args.mode === "production" ? SERVER_MODES.PRODUCTION : SERVE
 
 if (server_mode === SERVER_MODES.DEVELOPMENT) {
     console.info("Starting server in development mode.");
-    startFrontendDevServer(8080);
-    // this time, it's the frontend server that is on port 8080
+    startFrontendDevServer(9667);
+    // this time, it's the frontend server that is on port 9667
     // requests for the backend will be proxied to prevent cross origins errors
     startBackendServer(3000);
 } else {
     console.info("Starting server in production mode.");
-    startBackendServer(process.env.PORT || 8080);
+    startBackendServer(process.env.PORT || 9667);
 }
